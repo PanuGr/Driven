@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="In this project I  replicate the landing page from a local driving school"
+    />
+    <meta name="author" content="Panagiotis Panagiotakopoulos" />
+    <link
+      rel="stylesheet prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <link rel="stylesheet preload" as="style" href="/driven-bootstrap.css">
+    <link
+      rel="shortcut icon"
+      href="/business.ico"
+      type="image/x-icon"
+    />
+    <title>Driven | Autokoulu, ajokoulutus, ajokortti</title>
+    <style>
+      footer ul {
+        list-style: none;
+      }
+      button:hover {
+        transform: scale(0.9);
+        transition: transform ease-in 100ms;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container-fluid bg-dark card border-0 rounded-0">
+      <img
+        src="/driven-car2.webp"
+        class="card-img"
+        alt="Picture of a car, representing the drive-school"
+      />
+      <figure class="card-img-overlay">
+        <img
+          class="animate__animated animate__fadeInLeft container img-fluid align-top d-block w-50"
+          src="/driven_logo.webp"
+          alt="driving school's photo"
+        /><img
+          class="align-bottom img-fluid d-block w-25 container"
+          src="/teksti.webp"
+          id="register"
+          alt="Registration message"
+        />
+      </figure>
+      <nav
+        class="container d-md-flex justify-content-center navbar navbar-expand-md"
+      >
+        <a
+          class="mx-1 py-2 link-light text-uppercase nav-link"
+          aria-current="page"
+          href="#"
+          >etusivu</a
+        >
+        <a class="mx-1 py-2 link-light text-uppercase nav-link" href="#"
+          >korttiluokat ja hinnasto</a
+        >
+        <a class="mx-1 py-2 link-light text-uppercase nav-link" href="#"
+          >ilmoittaudu kursille</a
+        >
+        <a class="mx-1 py-2 link-light text-uppercase nav-link" href="#"
+          >kalenteri</a
+        >
+        <a class="mx-1 py-2 link-light text-uppercase nav-link" href="#"
+          >yhteystiedot</a
+        >
+      </nav>
+    </header>
+    <main>
+      <section class="bg-dark pb-5">
+        <ul id="lessons" class="d-md-flex justify-content-around pt-4">
+          <script id="lessons-template" type="text/x-handlebars-template">
+            {{#each lesson}}
+              <li
+                class="card text-center text-light bg-dark border-light m-3 p-2"
+              >
+                <i class="{{fontAwesome}}"></i>
+                <h6>
+                  KURSSIMAKSU
+                </h6>
+                <h5>
+                  Price €
+                </h5>
+                <p>
+                  Viranomaiskulut:
+                  <br />
+                  * Ajokorttilupamaksu €€
+                  <br />
+                  * Teoriakoemaksu €€
+                  <br />
+                  *
+                  Käsittelykoemaksu €€
+                </p>
+                <p>
+                  <b>
+                    Kokonaishinta Price €
+                    <br />
+                    Muista myös osamaksumahdollisuus!
+                  </b>
+                </p>
+                <button
+                  class="btn bg-warning mb-3
+                  text-light font-weight-bold text-uppercase"
+                >
+                  ilmoittaudu heti!
+                </button>
+                <h4>
+                  {{vehicle}}
+                </h4>
+              </li>
+            {{/each}}
+          </script>
+        </ul>
+        <aside class="container p-4">
+          <button
+            class="container btn bg-warning text-center p-2 text-uppercase text-light font-weight-bold"
+          >
+            katso alkavat kurssit >>
+          </button>
+        </aside>
+      </section>
+      <section class="container py-5">
+        <ul class="card text-center list-group my-5 border-dark rounded-pill">
+          <li class="list-group-item">
+            <i class="fas fa-bullhorn fa-5x"></i>
+            <p
+              class="display-6 rounded alert-warning w-75 container text-warning font-weight-bold"
+            >
+              Uudet AM-, A- ja B-kurssit joka maanantai klo 16:15
+            </p>
+            <p>
+              Me räätälöimme juuri sinulle sopivan aikataulun ja
+              maksusuunitelman
+              <br />
+              Vastaamme mielellämme ajokorttiasioita koskeviin kysymyksiin.<br />
+              Tervetuloa kursseillemme!
+            </p>
+            <h2>Ajankohtaista</h2>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer
+      class="container-fluid bg-dark text-white d-lg-flex justify-content-evenly"
+    >
+      <ul class="pt-4">
+        <li class="p-2">
+          <i class="fas fa-user fa-lg"></i>
+          <a href="tel:+" class="link link-light"> Teacher's name (Uki)</a>
+        </li>
+        <li class="p-2">
+          <i class="fas fa-user fa-lg"></i>
+          <a href="tel:+" class="link link-light"> Teacher's name (Laitila)</a>
+        </li>
+      </ul>
+      <ul class="pt-4">
+        <li class="p-2 font-weight-bold">Liikennekoulu Driven Oy</li>
+        <li class="p-2">
+          <address class="font-italic">
+            office in<br />
+            Uusikaupunki
+          </address>
+        </li>
+        <li class="p-2">
+          <address class="font-italic">
+            office in <br />
+            Laitila
+          </address>
+        </li>
+        <li>
+          <i class="far fa-envelope"></i
+          ><a href="mailto:" class="link link-light"> mail@address.fi</a>
+        </li>
+      </ul>
+      <ul class="pt-4">
+        <li class="p-2">
+          <i class="fab fa-facebook-square fa-4x"></i>
+        </li>
+      </ul>
+    </footer>
+    <a class="link link-dark font-weight-bold ml-2" href="../index.html">
+      <small><em>take a look on my other projects</em></small>
+    </a>
+    <script defer
+      src="https://kit.fontawesome.com/a72b9e7ca4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script async
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"
+      integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const source = document.getElementById("lessons-template").innerHTML;
+      const template = Handlebars.compile(source);
+      const content = {
+        lesson: [
+          {
+            fontAwesome: "fas fa-bicycle fa-3x",
+            vehicle: "MOPOKORTTI",
+          },
+          {
+            fontAwesome: "fas fa-motorcycle fa-3x",
+            vehicle: "MOOTTORI-PYÖRÄKORTTI",
+          },
+          {
+            fontAwesome: "fas fa-car-side fa-3x",
+            vehicle: "B-HENKILÖ-AUTOKORTTI",
+          },
+        ],
+      };
+      const compiledHtml = template(content);
+      const fill = document.getElementById("lessons");
+      fill.innerHTML = compiledHtml;
+    </script>
+  </body>
+</html>
